@@ -4,14 +4,15 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const app = express();
-
-const port = process.env.PORT ;
+const port = process.env.PORT  || 3000;
 
 app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
+//ROUTES
+const userRoutes = require('./src/routes/userRoutes');
+const productRoutes = require('./src/routes/productRoutes');
+const cartRoutes = require('./src/routes/cartRoutes');
+const orderRoutes = require('./src/routes/orderRoutes');
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
