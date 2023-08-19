@@ -34,3 +34,7 @@ mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => {
     console.error('Error', err);
   });
+
+app.get('/', (req, res) => {
+    res.send('<h1>Billing System Plotline</h1><h3>Samarth Kumar</h3>');
+});
