@@ -12,8 +12,17 @@ app.use(bodyParser.json());
 //ROUTES
 const userRoutes = require('./src/routes/userRoutes');
 const productRoutes = require('./src/routes/productRoutes');
+const serviceRoutes = require('./src/routes/serviceRoutes');
 const cartRoutes = require('./src/routes/cartRoutes');
 const orderRoutes = require('./src/routes/orderRoutes');
+const adminRoutes = require('./src/routes/adminRoutes');
+
+app.use('/api/users', userRoutes);
+// app.use('/api/products', productRoutes);
+// app.use('/api/services', serviceRoutes);
+// app.use('/api/cart', cartRoutes);
+// app.use('/api/orders', orderRoutes);
+// app.use('/api/admin', adminRoutes);
 
 //MONGODB
 mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
