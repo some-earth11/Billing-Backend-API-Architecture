@@ -20,9 +20,9 @@ const adminRoutes = require('./src/routes/adminRoutes');
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/services', serviceRoutes);
-// app.use('/api/cart', cartRoutes);
-// app.use('/api/orders', orderRoutes);
-// app.use('/api/admin', adminRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/admin', adminRoutes);
 
 //MONGODB
 mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
