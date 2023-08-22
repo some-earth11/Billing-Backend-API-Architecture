@@ -116,7 +116,8 @@ const cartController = {
 
   removeFromCart: async (req, res) => {
     try {
-      const { userId, itemId } = req.body;
+      const { userId }  = req.body;
+      const itemId = req.params.itemId;
 
       const userCart = await Cart.findOne({ userId });
 
